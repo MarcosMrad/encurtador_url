@@ -29,7 +29,7 @@ public class UrlResource {
 
 	@PostMapping(value = "/shorten")
 	public ResponseEntity<Url> shortenUrl(@RequestBody ShortenRequestDTO request){
-		String originalUrlFromDto = request.originalURL();
+		String originalUrlFromDto = request.originalUrl();
 		if(originalUrlFromDto == null || originalUrlFromDto.isEmpty() ) {
 			return ResponseEntity.badRequest().build();
 		}
