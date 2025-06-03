@@ -16,8 +16,8 @@ Este projeto é uma API RESTful para encurtamento de URLs, construída com Java,
     * Spring Web (para a API REST)
     * Spring Data JPA (para salvar os dados)
     * Spring Validation (para checar se a URL é válida)
-* **H2 Database**: Um banco de dados que roda na memória, super prático!
-* **Lombok**: Para escrever menos código chato.
+* **H2 Database**: Um banco de dados que roda na memória.
+* **Lombok**: Para escrever menos código repetitivo.
 * **Maven**: Para organizar o projeto.
 
 ## 🎯 Endpoints da API
