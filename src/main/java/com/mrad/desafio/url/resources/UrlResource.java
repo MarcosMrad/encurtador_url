@@ -31,9 +31,6 @@ public class UrlResource {
 	@PostMapping(value = "/shorten")
 	public ResponseEntity<Url> shortenUrl(@Valid @RequestBody ShortenRequestDTO request){
 		String originalUrlFromDto = request.originalUrl();
-		if(originalUrlFromDto == null || originalUrlFromDto.isEmpty() ) {
-			return ResponseEntity.badRequest().build();
-		}
 		Url createdUrl = service.shortenUrl(originalUrlFromDto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(createdUrl);
 	}
