@@ -19,6 +19,7 @@ import com.mrad.desafio.url.entities.dto.ShortenRequestDTO;
 import com.mrad.desafio.url.services.UrlService;
 
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/api")
@@ -28,7 +29,7 @@ public class UrlResource {
 	private UrlService service;
 
 	@PostMapping(value = "/shorten")
-	public ResponseEntity<Url> shortenUrl(@RequestBody ShortenRequestDTO request){
+	public ResponseEntity<Url> shortenUrl(@Valid @RequestBody ShortenRequestDTO request){
 		String originalUrlFromDto = request.originalUrl();
 		if(originalUrlFromDto == null || originalUrlFromDto.isEmpty() ) {
 			return ResponseEntity.badRequest().build();
